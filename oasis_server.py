@@ -19,9 +19,6 @@ from _thread import *
 import json
 import pickle5 as pickle
 
-#create a secure lan interface for accepting credentials
-import streamlit as st
-
 #update wpa_supplicant.conf
 def modWiFiConfig(SSID, password):
     config_lines = [
@@ -102,6 +99,48 @@ def save_creds_exit(email, password, wifi_name, wifi_pass, device_name):
 
 if __name__ == '__main__':
 
+    #create a secure lan interface for accepting credentials
+    import streamlit as st
+    
+    st.markdown(
+        """
+    <style>
+    .reportview-container .markdown-text-container {
+        font-family: monospace;
+    }
+    .sidebar .sidebar-content {
+        background-image: linear-gradient(#2e7bcf,#2e7bcf);
+        color: white;
+    }
+    .Widget>label {
+        color: white;
+        font-family: monospace;
+    }
+    [class^="st-b"]  {
+        color: white;
+        font-family: monospace;
+    }
+    .st-bb {
+        background-color: transparent;
+    }
+    .st-at {
+        background-color: #0c0080;
+    }
+    footer {
+        font-family: monospace;
+    }
+    .reportview-container .main footer, .reportview-container .main footer a {
+        color: #0c0080;
+    }
+    header .decoration {
+        background-image: none;
+    }
+
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
+    
     default = ""
 
     st.title('Oasis Device Setup')

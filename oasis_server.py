@@ -102,44 +102,29 @@ if __name__ == '__main__':
     #create a secure lan interface for accepting credentials
     import streamlit as st
     
-    st.markdown(
-        """
-    <style>
-    .reportview-container .markdown-text-container {
-        font-family: monospace;
-    }
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#2e7bcf,#2e7bcf);
-        color: white;
-    }
-    .Widget>label {
-        color: white;
-        font-family: monospace;
-    }
-    [class^="st-b"]  {
-        color: white;
-        font-family: monospace;
-    }
-    .st-bb {
-        background-color: transparent;
-    }
-    .st-at {
-        background-color: #0c0080;
-    }
-    footer {
-        font-family: monospace;
-    }
-    .reportview-container .main footer, .reportview-container .main footer a {
-        color: #0c0080;
-    }
-    header .decoration {
-        background-image: none;
-    }
+    #hide streamlit logo
+    hide_footer_style = """
+                        <style>
+                        .reportview-container .main footer {visibility: hidden;}    
+                        """
+    st.markdown(hide_footer_style, unsafe_allow_html=True)
 
-    </style>
-    """,
-        unsafe_allow_html=True,
-    )
+    hide_menu_style = """
+				<style>
+				#MainMenu {visibility: hidden;}
+				</style>
+				"""
+    st.markdown(hide_menu_style, unsafe_allow_html=True)
+    
+    change_button_style = """ div.stButton > button:first-child {
+                            background-color: #00cc00;color:white;font-size:20px;height:3em;width:30em;border-radius:10px 10px 10px 10px;
+                          }
+                            """
+
+    st.markdown(change_button_style, unsafe_allow_html=True)
+    
+    change_body = """ body {color: #fff; background-color: #4f8bf9;}"""
+    st.markdown(change_body, unsafe_allow_html=True)
     
     default = ""
 
